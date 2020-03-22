@@ -1,0 +1,77 @@
+<div>
+  <ly-paper [className]="classes.paper">
+    <ly-grid container>
+      <ly-grid container item col='6'>
+        <ly-grid item col='12'>
+          <h3 [lyTyp]="'display1'" gutterBottom>{{profile.name}}</h3>
+        </ly-grid>
+        <ly-grid item col='12'>
+          <div [className]="classes.iconListItem">
+            <ly-icon>person</ly-icon>
+            <p [lyTyp]="'title'">
+              {{profile.availability ? "Available for hire" : "Currently employed"}}
+            </p>
+          </div>
+        </ly-grid>
+        <ly-grid item col='12'>
+          <div [className]="classes.iconListItem">
+            <ly-icon>place</ly-icon>
+            <p [lyTyp]="'title'">
+              {{profile.location}}
+            </p>
+          </div>
+        </ly-grid>
+        <ly-grid item col='12'>
+          <div [className]="classes.iconListItem">
+            <ly-icon>mail</ly-icon>
+            <p [lyTyp]="'title'">
+              Email@gmail.com
+            </p>
+          </div>
+        </ly-grid>
+      </ly-grid>
+      <ly-grid item col='6'>
+        <ly-avatar size="200">
+          <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
+        </ly-avatar>
+      </ly-grid>
+      <ly-grid item col='12'>
+        <p [lyTyp]="'body1'">
+          {{profile.description}}
+
+          {{profile.description}}
+          {{profile.description}}
+        </p>
+      </ly-grid>
+      <ly-grid container item [spacing]="16">
+        <ly-grid item col>
+          <button ly-button appearance="icon" [className]="classes.smbutton">
+            <ly-icon icon="linkedin"></ly-icon>
+          </button>
+        </ly-grid>
+        <ly-grid item col>
+          <button ly-button appearance="icon" [className]="classes.smbutton">
+            <ly-icon icon="instagram"></ly-icon>
+          </button>
+        </ly-grid>
+        <ly-grid item col>
+          <button ly-button appearance="icon" [className]="classes.smbutton">
+            <ly-icon icon="github"></ly-icon>
+          </button>
+        </ly-grid>
+        <ly-grid item col>
+          <button ly-button appearance="icon" [className]="classes.smbutton">
+            <ly-icon icon="telegram"></ly-icon>
+          </button>
+        </ly-grid>
+      </ly-grid>
+      <ly-grid item col='12'>
+        <div [lyTyp]="'body1'">
+          <a>
+            <span [className]="classes.githubTag">—@{{profile.githubTag}}</span>
+          </a>
+        </div>
+      </ly-grid>
+    </ly-grid>
+  </ly-paper>
+</div>

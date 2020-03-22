@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@alyle/ui": "^3.1.2",
     "@angular/animations": "~9.0.7",
     "@angular/common": "~9.0.7",
     "@angular/compiler": "~9.0.7",
@@ -19,6 +20,9 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "@smip/ngx-sticky-sidebar": "0.0.3",
+    "angular-hammer": "^2.2.0",
+    "hammerjs": "^2.0.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
