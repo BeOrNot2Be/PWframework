@@ -20,7 +20,7 @@ const styles = (theme: ThemeVariables) => ({
     margin: "1em",
     padding: "1em",
     background: theme.background.default,
-    boxShadow: "20px 20px 60px #cbcaca, -20px -20px 60px #ffffff",
+    boxShadow: "6px 6px 11px #cbcaca, -6px -6px 11px #ffffff",
     borderRadius: "25px"
   },
   iconListItem: {
@@ -33,6 +33,10 @@ const styles = (theme: ThemeVariables) => ({
   },
   profileImage: {
     borderRadius: "20px!important"
+  },
+  profileElement: {
+    position: "sticky",
+    top: "20vh"
   }
 });
 

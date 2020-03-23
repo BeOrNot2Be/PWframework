@@ -3,247 +3,182 @@
 
     <ly-grid container spacing="36">
         <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
+            <ly-grid container spacing="36">
+                <ly-grid item col='12'>
+                    <ly-card [className]="classes.projectCard">
+                        <ly-card-content>
+                            <ly-grid container>
+                                <ly-grid item col="6">
+                                    <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue
+                                        Mountains
+                                    </h2>
+                                </ly-grid>
+                                <ly-grid item col="6">
+                                    <div [className]="classes.languageTitle">
+                                        <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
+                                        <span [className]="classes.languageTitleComponent"
+                                            [lyTyp]="'title'">Python</span>
+                                    </div>
+                                </ly-grid>
+                            </ly-grid>
+                            <p lyTyp="body1">
+                                {{truncate(cardText)}}
+                            </p>
+                        </ly-card-content>
+                        <ly-card-actions disableActionSpacing>
+                            <button ly-button appearance="icon">
+                                <ly-icon>link</ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon icon="github"></ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon>description</ly-icon>
+                            </button>
+                        </ly-card-actions>
+                    </ly-card>
+                </ly-grid>
+                <ly-grid item col='12'>
+                    <ly-card [className]="classes.projectCard">
+                        <ly-card-content>
+                            <ly-grid container>
+                                <ly-grid item col="6">
+                                    <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue
+                                        Mountains
+                                    </h2>
+                                </ly-grid>
+                                <ly-grid item col="6">
+                                    <div [className]="classes.languageTitle">
+                                        <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
+                                        <span [className]="classes.languageTitleComponent"
+                                            [lyTyp]="'title'">Python</span>
+                                    </div>
+                                </ly-grid>
+                            </ly-grid>
+                            <p lyTyp="body1">
+                                {{truncate(cardText2)}}
+                            </p>
+                        </ly-card-content>
+                        <ly-card-actions disableActionSpacing>
+                            <button ly-button appearance="icon">
+                                <ly-icon>link</ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon icon="github"></ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon>description</ly-icon>
+                            </button>
+                        </ly-card-actions>
+                    </ly-card>
+                </ly-grid>
+            </ly-grid>
         </ly-grid>
         <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
-        </ly-grid>
-        <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
-        </ly-grid>
-        <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
-        </ly-grid>
-        <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
-        </ly-grid>
-        <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
-        </ly-grid>
-        <ly-grid item col='6'>
-            <ly-card [className]="classes.projectCard">
-                <ly-card-content>
-                    <ly-grid container>
-                        <ly-grid item col="6">
-                            <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue Mountains
-                            </h2>
-                        </ly-grid>
-                        <ly-grid item col="6">
-                            <div [className]="classes.languageTitle">
-                                <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                <span [className]="classes.languageTitleComponent" [lyTyp]="'title'">Python</span>
-                            </div>
-                        </ly-grid>
-                    </ly-grid>
-                    <p lyTyp="body1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa
-                        animi
-                        alias rem.
-                    </p>
-                </ly-card-content>
-                <ly-card-actions disableActionSpacing>
-                    <button ly-button appearance="icon">
-                        <ly-icon>link</ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon icon="github"></ly-icon>
-                    </button>
-                    <button ly-button appearance="icon">
-                        <ly-icon>description</ly-icon>
-                    </button>
-                </ly-card-actions>
-            </ly-card>
+            <ly-grid container spacing="36">
+                <ly-grid item col='12'>
+                    <ly-card [className]="classes.projectCard">
+                        <ly-card-content>
+                            <ly-grid container>
+                                <ly-grid item col="6">
+                                    <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue
+                                        Mountains
+                                    </h2>
+                                </ly-grid>
+                                <ly-grid item col="6">
+                                    <div [className]="classes.languageTitle">
+                                        <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
+                                        <span [className]="classes.languageTitleComponent"
+                                            [lyTyp]="'title'">Python</span>
+                                    </div>
+                                </ly-grid>
+                            </ly-grid>
+                            <p lyTyp="body1">
+                                {{truncate(cardText)}}
+                            </p>
+                        </ly-card-content>
+                        <ly-card-actions disableActionSpacing>
+                            <button ly-button appearance="icon">
+                                <ly-icon>link</ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon icon="github"></ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon>description</ly-icon>
+                            </button>
+                        </ly-card-actions>
+                    </ly-card>
+                </ly-grid>
+                <ly-grid item col='12'>
+                    <ly-card [className]="classes.projectCard">
+                        <ly-card-content>
+                            <ly-grid container>
+                                <ly-grid item col="6">
+                                    <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue
+                                        Mountains
+                                    </h2>
+                                </ly-grid>
+                                <ly-grid item col="6">
+                                    <div [className]="classes.languageTitle">
+                                        <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
+                                        <span [className]="classes.languageTitleComponent"
+                                            [lyTyp]="'title'">Python</span>
+                                    </div>
+                                </ly-grid>
+                            </ly-grid>
+                            <p lyTyp="body1">
+                                {{truncate(cardText2)}}
+                            </p>
+                        </ly-card-content>
+                        <ly-card-actions disableActionSpacing>
+                            <button ly-button appearance="icon">
+                                <ly-icon>link</ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon icon="github"></ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon>description</ly-icon>
+                            </button>
+                        </ly-card-actions>
+                    </ly-card>
+                </ly-grid>
+                <ly-grid item col='12'>
+                    <ly-card [className]="classes.projectCard">
+                        <ly-card-content>
+                            <ly-grid container>
+                                <ly-grid item col="6">
+                                    <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline">Blue
+                                        Mountains
+                                    </h2>
+                                </ly-grid>
+                                <ly-grid item col="6">
+                                    <div [className]="classes.languageTitle">
+                                        <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
+                                        <span [className]="classes.languageTitleComponent"
+                                            [lyTyp]="'title'">Python</span>
+                                    </div>
+                                </ly-grid>
+                            </ly-grid>
+                            <p lyTyp="body1">
+                                {{truncate(cardText)}}
+                            </p>
+                        </ly-card-content>
+                        <ly-card-actions disableActionSpacing>
+                            <button ly-button appearance="icon">
+                                <ly-icon>link</ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon icon="github"></ly-icon>
+                            </button>
+                            <button ly-button appearance="icon">
+                                <ly-icon>description</ly-icon>
+                            </button>
+                        </ly-card-actions>
+                    </ly-card>
+                </ly-grid>
+            </ly-grid>
         </ly-grid>
     </ly-grid>
 </div>

@@ -1,4 +1,4 @@
-<div>
+<div [className]="classes.profileElement">
   <ly-paper [className]="classes.paper">
     <ly-grid container>
       <ly-grid container item col='6'>
@@ -31,12 +31,13 @@
         </ly-grid>
       </ly-grid>
       <ly-grid item col='6'>
-        <ly-avatar size="200">
+        <ly-avatar size="auto">
           <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
         </ly-avatar>
       </ly-grid>
       <ly-grid item col='12'>
         <p [lyTyp]="'body1'">
+          <br>
           {{profile.description}}
 
           {{profile.description}}
