@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { GithubProfile, Profile } from "../../models/Profile";
+import { GithubProfile, Profile, ProfileLink } from "../../models/Profile";
 import { ProfileService } from "../../services/profile.service";
 import { LyIconService } from "@alyle/ui/icon";
 import { shadowBuilder, LyTheme2, ThemeVariables } from "@alyle/ui";
 import { DomSanitizer } from "@angular/platform-browser";
+import { ConfigReaderService } from "src/app/services/config-reader.service";
 
 const styles = (theme: ThemeVariables) => ({
   smbutton: {
@@ -49,9 +50,11 @@ export class ProfileComponent implements OnInit {
   readonly classes = this.theme.addStyleSheet(styles);
 
   profile: Profile = new Profile();
+  links: ProfileLink = new ProfileLink();
 
   constructor(
     private profileService: ProfileService,
+    private configReaderService: ConfigReaderService,
     private theme: LyTheme2,
     private icon: LyIconService,
     private sanitizer: DomSanitizer
@@ -82,6 +85,13 @@ export class ProfileComponent implements OnInit {
     );
   }
   ngOnInit(): void {
+    this.configReaderService.getProfile(this.profile);
     this.profileService.getProfile(this.profile);
+
+    this.configReaderService.getLinks(this.links);
+  }
+
+  openTab(link: string): void {
+    window.open(link);
   }
 }

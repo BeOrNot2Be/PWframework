@@ -6,6 +6,14 @@ export class Profile {
   githubTag: string;
   location: string;
   imgUrl: string;
+  email: string;
+}
+
+export class ProfileLink {
+  lnkedin: string;
+  github: string;
+  telegram: string;
+  instagram: string;
 }
 
 export class GithubProfile {

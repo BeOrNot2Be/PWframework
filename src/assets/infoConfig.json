@@ -1,0 +1,41 @@
+{
+  "name": "Tim Avilov",
+  "bio": "I am energetic self-taught developer with experience in freelance. I fall in love with designing, implementing, testing and maintaining software. I become proficient in various platforms, languages, and embedded systems. Always hungry for knowledge and I am aiming to advance my skills and grow as a developer by gaining more experience in a company that has a hand in developing the innovation of tomorrow.",
+  "location": "Portland, Oregon",
+  "githubTag": "BeOrNot2Be",
+  "avatar_url": "",
+  "availability": true,
+  "email": "timchick.ua@gmail.com",
+  "links": {
+    "lnkedin": "https://www.linkedin.com/in/tim-avilov/",
+    "github": "https://github.com/BeOrNot2Be",
+    "telegram": "https://t.me/BeOrNot2Be",
+    "instagram": "https://www.instagram.com/agushakun/"
+  },
+  "projects": [
+    {
+      "name": "Avilon Production",
+      "description": "This Django webapp was made for photographer who was born to do art projects and I am truly happy that we created such a project. Website contains a lot of custom animations.",
+      "link": "https://www.avilonproduction.com/",
+      "repoLink": "https://github.com/BeOrNot2Be/MEDILOV-back",
+      "mainStack": "Python/Django",
+      "descriptionLink": "https://github.com/BeOrNot2Be/MEDILOV-back/blob/master/README.md"
+    },
+    {
+      "name": "Cocktail Builder",
+      "description": "This Expo - React Native app based on app companion for cocktailbuilder.com with Light and Dark themes support. Compose the application from available screens, add backend integration and you will end up with A-grade cross-platform mobile application. The themes can be changed in the runtime, without any need of reloading the application.",
+      "link": "https://expo.io/@beornot2be/cocktailbuilderApp",
+      "repoLink": "https://github.com/BeOrNot2Be/CocktailBuilder",
+      "mainStack": "JS/React Native",
+      "descriptionLink": "https://github.com/BeOrNot2Be/CocktailBuilder/blob/master/README.md"
+    },
+    {
+      "name": "SportsHold",
+      "description": "This Meteor - React app based on psd landing page template from Cosmin Negoita. The app has interpreting functionality which dynamically can translate whole interface (currently supports 4 language). Ongoing version powered by meteor and mongodb as backend that gives ability to run with pub/sub model which allow website to show and update all data in realtime.",
+      "link": "https://copvsmed.herokuapp.com/",
+      "repoLink": "https://github.com/BeOrNot2Be/CopVSMed",
+      "mainStack": "JS/React",
+      "descriptionLink": "https://github.com/BeOrNot2Be/CopVSMed/blob/master/README.md"
+    }
+  ]
+}

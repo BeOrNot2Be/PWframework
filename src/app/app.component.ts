@@ -21,7 +21,5 @@ const STYLES = (theme: ThemeVariables) => ({
 export class AppComponent {
   readonly classes = this.theme.addStyleSheet(STYLES);
 
-  title = "PersonalWebsite";
-
   constructor(private theme: LyTheme2) {}
 }

@@ -1,11 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { shadowBuilder, LyTheme2, ThemeVariables } from "@alyle/ui";
+import { ConfigReaderService } from "src/app/services/config-reader.service";
+import { Project } from "src/app/models/Project";
 
 const styles = (theme: ThemeVariables) => ({
   projectCard: {
     background: theme.background.default,
     boxShadow: "6px 6px 11px #cbcaca, -6px -6px 11px #ffffff",
-    borderRadius: "25px"
+    borderRadius: "25px",
+    margin: "1rem"
   },
   projectCardHeadline: {
     textDecoration: "underline",
@@ -53,7 +56,18 @@ export class ProjectsComponent implements OnInit {
     return text;
   }
 
-  constructor(private theme: LyTheme2) {}
+  projects: Project[];
 
-  ngOnInit(): void {}
+  constructor(
+    private theme: LyTheme2,
+    private configReaderService: ConfigReaderService
+  ) {}
+
+  ngOnInit(): void {
+    this.projects = this.configReaderService.getProjects();
+  }
+
+  openTab(link: string): void {
+    window.open(link);
+  }
 }
