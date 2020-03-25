@@ -6,20 +6,22 @@ import { Project } from "src/app/models/Project";
 const styles = (theme: ThemeVariables) => ({
   projectCard: {
     background: theme.background.default,
-    boxShadow: "6px 6px 11px #cbcaca, -6px -6px 11px #ffffff",
+    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
     borderRadius: "25px",
     margin: "1rem"
   },
   projectCardHeadline: {
     textDecoration: "underline",
-    marginTop: "0px"
+    marginTop: "0px",
+    wordBreak: "break-word"
   },
   languageTitle: {
     textAlign: "center"
   },
   languageTitleComponent: {
     display: "inline",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
+    wordBreak: "break-word"
   },
   projects: {
     margin: "1em"
@@ -33,9 +35,6 @@ const styles = (theme: ThemeVariables) => ({
 })
 export class ProjectsComponent implements OnInit {
   readonly classes = this.theme.addStyleSheet(styles);
-  cardText =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi alias rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam ipsa animi alias rem.";
-  cardText2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
 
   public truncate(text: string): string {
     if (text.length > 180) {

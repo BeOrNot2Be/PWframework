@@ -1,5 +1,5 @@
 <div [className]="classes.projects">
-    <h2 [lyTyp]="'display2'">Projects</h2>
+    <a routerLink="">profile</a>
 
     <ly-grid container>
         <ly-grid item col='6'>
@@ -23,9 +23,9 @@
                                         </div>
                                     </ly-grid>
                                 </ly-grid>
-                                <p lyTyp="body1">
+                                <span lyTyp="body1">
                                     {{truncate(project.description)}}
-                                </p>
+                                </span>
                             </ly-card-content>
                             <ly-card-actions disableActionSpacing>
                                 <button ly-button appearance="icon" (click)="openTab(project.link)">
@@ -64,9 +64,9 @@
                                         </div>
                                     </ly-grid>
                                 </ly-grid>
-                                <p lyTyp="body1">
+                                <span lyTyp="body1">
                                     {{truncate(project.description)}}
-                                </p>
+                                </span>
                             </ly-card-content>
                             <ly-card-actions disableActionSpacing>
                                 <button ly-button appearance="icon" (click)="openTab(project.link)">

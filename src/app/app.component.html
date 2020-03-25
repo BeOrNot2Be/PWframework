@@ -1,18 +1,3 @@
-<div>
-  <ly-grid container>
-    <ly-grid item [col]="1">
-    </ly-grid>
-    <ly-grid container item [col]="10">
-      <ly-grid item [col]="4">
-        <app-profile>
-        </app-profile>
-      </ly-grid>
-      <ly-grid item [col]="8">
-        <app-projects>
-        </app-projects>
-      </ly-grid>
-    </ly-grid>
-    <ly-grid item [col]="1">
-    </ly-grid>
-  </ly-grid>
-</div>
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</main>

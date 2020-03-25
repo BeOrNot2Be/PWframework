@@ -17,8 +17,16 @@ import { LyAvatarModule } from "@alyle/ui/avatar";
 import { CustomMinimaLight } from "./app.theming";
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { LyCardModule } from "@alyle/ui/card";
+import { ProfileStandalonePageComponent } from "./components/profile-standalone-page/profile-standalone-page.component";
+import { ProfileProjectsPageComponent } from './components/profile-projects-page/profile-projects-page.component';
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, ProjectsComponent],
+  declarations: [
+    AppComponent,
+    ProfileComponent,
+    ProjectsComponent,
+    ProfileStandalonePageComponent,
+    ProfileProjectsPageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

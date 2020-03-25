@@ -1,0 +1,107 @@
+<div [className]="classes.profileElement">
+    <ly-paper [className]="classes.paper">
+        <ly-grid container [spacing]="16">
+            <ly-grid item col='4'>
+                <div [className]="classes.avatarContainer">
+                    <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
+                </div>
+            </ly-grid>
+            <ly-grid item col='8'>
+                <ly-grid container>
+                    <ly-grid item col='12'>
+                        <ly-grid container>
+                            <ly-grid item col="6">
+                                <h3 [lyTyp]="'display1'" gutterBottom>{{profile.name}}</h3>
+                            </ly-grid>
+                            <ly-grid item col="6">
+                                <div>
+                                    <button ly-button appearance="icon" (click)="openTab(links.lnkedin)">
+                                        <ly-icon icon="linkedin"></ly-icon>
+                                    </button>
+                                    <button ly-button appearance="icon" (click)="openTab(links.instagram)">
+                                        <ly-icon icon="instagram"></ly-icon>
+                                    </button>
+                                    <button ly-button appearance="icon" (click)="openTab(links.github)">
+                                        <ly-icon icon="github"></ly-icon>
+                                    </button>
+                                    <button ly-button appearance="icon" (click)="openTab(links.telegram)">
+                                        <ly-icon icon="telegram"></ly-icon>
+                                    </button>
+                                </div>
+                            </ly-grid>
+                        </ly-grid>
+                    </ly-grid>
+                    <ly-grid item col='12'>
+                        <ly-grid container>
+                            <ly-grid item col="2">
+                                <ly-icon>person</ly-icon>
+                            </ly-grid>
+                            <ly-grid item col="10">
+                                <span [lyTyp]="'title'">
+                                    {{profile.availability ? "Available for hire" : "Currently employed"}}
+                                </span>
+                            </ly-grid>
+                        </ly-grid>
+                    </ly-grid>
+                    <ly-grid item col='12'>
+                        <ly-grid container>
+                            <ly-grid item col="2">
+                                <ly-icon>place</ly-icon>
+                            </ly-grid>
+                            <ly-grid item col="10">
+                                <span [lyTyp]="'title'">
+                                    {{profile.location}}
+                                </span>
+                            </ly-grid>
+                        </ly-grid>
+                    </ly-grid>
+                    <ly-grid item col='12'>
+                        <ly-grid container>
+                            <ly-grid item col="2">
+                                <ly-icon>mail</ly-icon>
+                            </ly-grid>
+                            <ly-grid item col="10">
+                                <span [lyTyp]="'title'">
+                                    {{profile.email}}
+                                </span>
+                            </ly-grid>
+                        </ly-grid>
+                    </ly-grid>
+                </ly-grid>
+            </ly-grid>
+            <ly-grid [@openClose]="aboutSectionIsOpen ? 'open' : 'closed'"
+                [className]="classes.defaultAboutSectionStyle" item col='12'>
+                <span [className]="classes.profileDescription" [lyTyp]="'body1'">
+                    {{truncate(profile.description)}}
+                </span>
+            </ly-grid>
+            <ly-grid item col='12'>
+                <ly-grid container>
+                    <ly-grid item col='12'>
+                        <div [className]="classes.projectsButtonContainer">
+                            <button ly-button routerLink="projects" [className]="classes.projectsButton">
+                                <div [lyTyp]="'title'">
+                                    PROJECTS >>>
+                                </div>
+                            </button>
+                        </div>
+                    </ly-grid>
+                    <ly-grid item col='6'>
+                        <div [lyTyp]="'body1'">
+                            <span [className]="classes.githubTag">—@{{profile.githubTag}}</span>
+                        </div>
+                    </ly-grid>
+                    <ly-grid item col='6'>
+                        <div [className]="classes.aboutMeButton">
+                            <button ly-button (click)="toggleAboutSection()">
+                                <span [lyTyp]="'title'">
+                                    -About-me-
+                                </span>
+                            </button>
+                        </div>
+                    </ly-grid>
+                </ly-grid>
+            </ly-grid>
+        </ly-grid>
+    </ly-paper>
+</div>

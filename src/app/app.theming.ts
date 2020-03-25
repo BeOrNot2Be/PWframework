@@ -9,7 +9,7 @@ import { color } from "@alyle/ui/color";
 export class CustomMinimaLight implements PartialThemeVariables {
   name = "minima-light";
   background = {
-    default: color(0xefeeee),
-    secondary: color(0xefeeee)
+    default: color(0xeeeeee),
+    secondary: color(0xeeeeee)
   };
 }

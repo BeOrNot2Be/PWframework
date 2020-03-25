@@ -5,6 +5,13 @@ import { LyIconService } from "@alyle/ui/icon";
 import { shadowBuilder, LyTheme2, ThemeVariables } from "@alyle/ui";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ConfigReaderService } from "src/app/services/config-reader.service";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from "@angular/animations";
 
 const styles = (theme: ThemeVariables) => ({
   smbutton: {
@@ -19,11 +26,12 @@ const styles = (theme: ThemeVariables) => ({
   paper: {
     display: "block",
     position: "relative",
-    margin: "1em",
+    margin: "auto auto",
     padding: "1em",
     background: theme.background.default,
     boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
-    borderRadius: "25px"
+    borderRadius: "25px",
+    maxWidth: "60vh"
   },
   iconListItem: {
     // textAlign: "center"
@@ -42,8 +50,8 @@ const styles = (theme: ThemeVariables) => ({
     height: "auto"
   },
   profileElement: {
-    position: "sticky",
-    top: "20vh"
+    display: "flex",
+    height: "100%"
   },
   profileDescription: {
     margin: "1rem 0"
@@ -59,15 +67,55 @@ const styles = (theme: ThemeVariables) => ({
   },
   smbuttonContainer: {
     display: "flex"
+  },
+  aboutMeButton: {
+    textAlign: "right",
+    textDecoration: "underline"
+  },
+  defaultAboutSectionStyle: {
+    opacity: 0,
+    paddingBottom: 0,
+    overflow: "hidden",
+    maxHeight: 0
+  },
+  projectsButton: {
+    color: "#eeeeee",
+    background: "#252525",
+    borderRadius: "50px",
+    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff"
+  },
+  projectsButtonContainer: {
+    textAlign: "right"
   }
 });
 
 @Component({
-  selector: "app-profile",
-  templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.css"]
+  selector: "app-profile-standalone-page",
+  templateUrl: "./profile-standalone-page.component.html",
+  styleUrls: ["./profile-standalone-page.component.css"],
+  animations: [
+    trigger("openClose", [
+      state(
+        "open",
+        style({
+          opacity: 1,
+          maxHeight: "1000px"
+        })
+      ),
+      state(
+        "closed",
+        style({
+          opacity: 0,
+          overflow: "hidden",
+          maxHeight: 0
+        })
+      ),
+      transition("open => closed", [animate("0.25s ease-out")]),
+      transition("closed => open", [animate("0.25s ease-in")])
+    ])
+  ]
 })
-export class ProfileComponent implements OnInit {
+export class ProfileStandalonePageComponent implements OnInit {
   readonly classes = this.theme.addStyleSheet(styles);
 
   profile: Profile = new Profile();
@@ -114,5 +162,30 @@ export class ProfileComponent implements OnInit {
 
   openTab(link: string): void {
     window.open(link);
+  }
+
+  aboutSectionIsOpen = false;
+
+  toggleAboutSection() {
+    this.aboutSectionIsOpen = !this.aboutSectionIsOpen;
+  }
+
+  public truncate(text: string): string {
+    if (text.length > 600) {
+      for (let i: number = 600; i > 0; i--) {
+        if (text.slice(i) == ".") {
+          text = text.slice(0, i);
+          text += "..";
+          break;
+        } else if (text.slice(i) == " ") {
+          continue;
+        } else {
+          text = text.slice(0, i);
+          text += "...";
+          break;
+        }
+      }
+    }
+    return text;
   }
 }
