@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Profile, GithubProfile } from "../models/Profile";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Profile, GithubProfile } from '../models/Profile';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ProfileService {
-  fetchGithubUrl: string = "https://api.github.com/users/";
+  fetchGithubUrl: string = 'https://api.github.com/users/';
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class ProfileService {
   ): void {
     profile.name =
       profile.name === undefined &&
-      githubProfile.name !== "" &&
+      githubProfile.name !== '' &&
       githubProfile.name !== null &&
       githubProfile.name !== undefined
         ? githubProfile.name
@@ -31,7 +31,7 @@ export class ProfileService {
 
     profile.description =
       profile.description === undefined &&
-      githubProfile.bio !== "" &&
+      githubProfile.bio !== '' &&
       githubProfile.bio !== null &&
       githubProfile.bio !== undefined
         ? githubProfile.bio
@@ -46,7 +46,7 @@ export class ProfileService {
 
     profile.location =
       profile.location === undefined &&
-      githubProfile.location !== "" &&
+      githubProfile.location !== '' &&
       githubProfile.location !== null &&
       githubProfile.location !== undefined
         ? githubProfile.location
@@ -54,7 +54,7 @@ export class ProfileService {
 
     profile.imgUrl =
       profile.imgUrl === undefined &&
-      githubProfile.avatar_url !== "" &&
+      githubProfile.avatar_url !== '' &&
       githubProfile.avatar_url !== null &&
       githubProfile.avatar_url !== undefined
         ? githubProfile.avatar_url
@@ -62,7 +62,7 @@ export class ProfileService {
 
     profile.githubUsername =
       profile.githubUsername === undefined &&
-      githubProfile.login !== "" &&
+      githubProfile.login !== '' &&
       githubProfile.login !== null &&
       githubProfile.login !== undefined
         ? githubProfile.login
@@ -70,22 +70,22 @@ export class ProfileService {
 
     profile.email =
       profile.email === undefined &&
-      githubProfile.email !== "" &&
+      githubProfile.email !== '' &&
       githubProfile.email !== null &&
       githubProfile.email !== undefined
         ? githubProfile.email
         : profile.email;
   }
 
-  private getUsername(profile: Profile, serviceUsername: string = ""): string {
-    if (serviceUsername !== "") {
+  private getUsername(profile: Profile, serviceUsername: string = ''): string {
+    if (serviceUsername !== '') {
       return serviceUsername;
     } else {
       if (
         profile.githubUsername === undefined ||
         profile.githubUsername === null
       ) {
-        throw new Error("No github username for fetching");
+        throw new Error('No github username for fetching');
       } else {
         return profile.githubUsername;
       }
@@ -94,13 +94,13 @@ export class ProfileService {
 
   getProfile(
     profile: Profile,
-    service: string = "github",
-    serviceUsername: string = ""
+    service: string = 'github',
+    serviceUsername: string = ''
   ): void {
     const username = this.getUsername(profile, serviceUsername);
 
     switch (service) {
-      case "github":
+      case 'github':
         this.getGitHubProfile(username).subscribe(githubProfile => {
           this.updateProfileWithGtihubData(profile, githubProfile);
         });

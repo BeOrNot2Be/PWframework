@@ -3,11 +3,11 @@ import {
   LY_THEME,
   LY_THEME_GLOBAL_VARIABLES,
   PartialThemeVariables
-} from "@alyle/ui";
-import { color } from "@alyle/ui/color";
+} from '@alyle/ui';
+import { color } from '@alyle/ui/color';
 
 export class CustomMinimaLight implements PartialThemeVariables {
-  name = "minima-light";
+  name = 'minima-light';
   background = {
     default: color(0xeeeeee),
     secondary: color(0xeeeeee)

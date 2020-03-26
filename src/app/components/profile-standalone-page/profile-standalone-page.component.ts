@@ -1,120 +1,120 @@
-import { Component, OnInit } from "@angular/core";
-import { GithubProfile, Profile, ProfileLink } from "../../models/Profile";
-import { ProfileService } from "../../services/profile.service";
-import { LyIconService } from "@alyle/ui/icon";
-import { shadowBuilder, LyTheme2, ThemeVariables } from "@alyle/ui";
-import { DomSanitizer } from "@angular/platform-browser";
-import { ConfigReaderService } from "src/app/services/config-reader.service";
+import { Component, OnInit } from '@angular/core';
+import { GithubProfile, Profile, ProfileLink } from '../../models/Profile';
+import { ProfileService } from '../../services/profile.service';
+import { LyIconService } from '@alyle/ui/icon';
+import { shadowBuilder, LyTheme2, ThemeVariables } from '@alyle/ui';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ConfigReaderService } from 'src/app/services/config-reader.service';
 import {
   trigger,
   state,
   style,
   animate,
   transition
-} from "@angular/animations";
+} from '@angular/animations';
 
 const styles = (theme: ThemeVariables) => ({
   smbutton: {
-    padding: "16px",
-    textAlign: "center",
+    padding: '16px',
+    textAlign: 'center',
     background: theme.background.default,
-    height: "100%",
-    borderRadius: "50px",
-    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
-    margin: "auto auto"
+    height: '100%',
+    borderRadius: '50px',
+    boxShadow: '9px 9px 9px #cbcaca, -9px -9px 9px #ffffff',
+    margin: 'auto auto'
   },
   paper: {
-    display: "block",
-    position: "relative",
-    margin: "auto auto",
-    padding: "1em",
+    display: 'block',
+    position: 'relative',
+    margin: 'auto auto',
+    padding: '1em',
     background: theme.background.default,
-    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
-    borderRadius: "25px",
-    maxWidth: "60vh"
+    boxShadow: '9px 9px 9px #cbcaca, -9px -9px 9px #ffffff',
+    borderRadius: '25px',
+    maxWidth: '60vh'
   },
   iconListItem: {
     // textAlign: "center"
   },
   githubUsername: {
-    color: "#ddd",
+    color: '#ddd',
     fontWeight: 500,
-    fontSize: "20px"
+    fontSize: '20px'
   },
   profileImage: {
-    borderRadius: "20px!important",
-    margin: "auto auto",
-    maxWidth: "180px",
-    maxHeight: "180px",
-    width: "100%",
-    height: "auto"
+    borderRadius: '20px!important',
+    margin: 'auto auto',
+    maxWidth: '180px',
+    maxHeight: '180px',
+    width: '100%',
+    height: 'auto'
   },
   profileElement: {
-    display: "flex",
-    height: "100%"
+    display: 'flex',
+    height: '100%'
   },
   profileDescription: {
-    margin: "1rem 0"
+    margin: '1rem 0'
   },
   iconListItemComponent: {
-    display: "inline",
-    verticalAlign: "middle",
-    wordBreak: "break-word"
+    display: 'inline',
+    verticalAlign: 'middle',
+    wordBreak: 'break-word'
   },
   avatarContainer: {
-    display: "flex",
-    height: "100%"
+    display: 'flex',
+    height: '100%'
   },
   smbuttonContainer: {
-    display: "flex"
+    display: 'flex'
   },
   aboutMeButton: {
-    textAlign: "right",
-    textDecoration: "underline"
+    textAlign: 'right',
+    textDecoration: 'underline'
   },
   defaultAboutSectionStyle: {
     opacity: 0,
     paddingBottom: 0,
-    overflow: "hidden",
+    overflow: 'hidden',
     maxHeight: 0
   },
   projectsButton: {
-    color: "#eeeeee",
-    background: "#252525",
-    borderRadius: "50px",
-    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff"
+    color: '#eeeeee',
+    background: '#252525',
+    borderRadius: '50px',
+    boxShadow: '9px 9px 9px #cbcaca, -9px -9px 9px #ffffff'
   },
   projectsButtonContainer: {
-    textAlign: "right"
+    textAlign: 'right'
   },
   iconContainer: {
-    textAlign: "right"
+    textAlign: 'right'
   }
 });
 
 @Component({
-  selector: "app-profile-standalone-page",
-  templateUrl: "./profile-standalone-page.component.html",
-  styleUrls: ["./profile-standalone-page.component.css"],
+  selector: 'app-profile-standalone-page',
+  templateUrl: './profile-standalone-page.component.html',
+  styleUrls: ['./profile-standalone-page.component.css'],
   animations: [
-    trigger("openClose", [
+    trigger('openClose', [
       state(
-        "open",
+        'open',
         style({
           opacity: 1,
-          maxHeight: "1000px"
+          maxHeight: '1000px'
         })
       ),
       state(
-        "closed",
+        'closed',
         style({
           opacity: 0,
-          overflow: "hidden",
+          overflow: 'hidden',
           maxHeight: 0
         })
       ),
-      transition("open => closed", [animate("0.25s ease-out")]),
-      transition("closed => open", [animate("0.25s ease-in")])
+      transition('open => closed', [animate('0.25s ease-out')]),
+      transition('closed => open', [animate('0.25s ease-in')])
     ])
   ]
 })
@@ -123,6 +123,7 @@ export class ProfileStandalonePageComponent implements OnInit {
 
   profile: Profile = new Profile();
   links: ProfileLink = new ProfileLink();
+  aboutSectionIsOpen: boolean = false;
 
   constructor(
     private profileService: ProfileService,
@@ -132,27 +133,27 @@ export class ProfileStandalonePageComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
     icon.setSvg(
-      "linkedin",
+      'linkedin',
       sanitizer.bypassSecurityTrustResourceUrl(
-        "./assets/socialmediaicons/045-linkedin"
+        './assets/socialmediaicons/045-linkedin'
       )
     );
     icon.setSvg(
-      "github",
+      'github',
       sanitizer.bypassSecurityTrustResourceUrl(
-        "./assets/socialmediaicons/038-github"
+        './assets/socialmediaicons/038-github'
       )
     );
     icon.setSvg(
-      "telegram",
+      'telegram',
       sanitizer.bypassSecurityTrustResourceUrl(
-        "./assets/socialmediaicons/029-telegram"
+        './assets/socialmediaicons/029-telegram'
       )
     );
     icon.setSvg(
-      "instagram",
+      'instagram',
       sanitizer.bypassSecurityTrustResourceUrl(
-        "./assets/socialmediaicons/025-instagram"
+        './assets/socialmediaicons/025-instagram'
       )
     );
   }
@@ -167,8 +168,6 @@ export class ProfileStandalonePageComponent implements OnInit {
     window.open(link);
   }
 
-  aboutSectionIsOpen = false;
-
   toggleAboutSection() {
     this.aboutSectionIsOpen = !this.aboutSectionIsOpen;
   }
@@ -176,15 +175,15 @@ export class ProfileStandalonePageComponent implements OnInit {
   public truncate(text: string): string {
     if (text.length > 600) {
       for (let i: number = 600; i > 0; i--) {
-        if (text.slice(i) == ".") {
+        if (text.slice(i) === '.') {
           text = text.slice(0, i);
-          text += "..";
+          text += '..';
           break;
-        } else if (text.slice(i) == " ") {
+        } else if (text.slice(i) === ' ') {
           continue;
         } else {
           text = text.slice(0, i);
-          text += "...";
+          text += '...';
           break;
         }
       }
