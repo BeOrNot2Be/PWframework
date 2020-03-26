@@ -29,8 +29,13 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Credentials for deployment
+        run: |
+          git config --global user.email "${{ secrets.email }}"
+          git config --global user.name "${{ github.event.schedule.user.login }}"
+
       - name: build
-        run: ng deploy --no-silent --base-href https://${{ github.event.schedule.user.login }}.github.io/${{ github.event.repository.name }}/ --name="${{ github.event.schedule.user.login }}" --email="${{ secrets.email }}"
+        run: ng deploy --no-silent --base-href https://${{ github.event.schedule.user.login }}.github.io/${{ github.event.repository.name }}/
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
