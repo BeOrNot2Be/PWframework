@@ -12,57 +12,57 @@ export class ConfigReaderService {
   getProfile(profile: Profile): void {
     profile.name =
       profile.name === undefined &&
-      infoConfig.name !== "" &&
-      infoConfig.name !== null &&
-      infoConfig.name !== undefined
-        ? infoConfig.name
+      (infoConfig["name"] || undefined) !== "" &&
+      (infoConfig["name"] || undefined) !== null &&
+      (infoConfig["name"] || undefined) !== undefined
+        ? infoConfig["name"] || undefined
         : profile.name;
 
     profile.description =
       profile.description === undefined &&
-      infoConfig.bio !== "" &&
-      infoConfig.bio !== null &&
-      infoConfig.bio !== undefined
-        ? infoConfig.bio
+      (infoConfig["bio"] || undefined) !== "" &&
+      (infoConfig["bio"] || undefined) !== null &&
+      (infoConfig["bio"] || undefined) !== undefined
+        ? infoConfig["bio"] || undefined
         : profile.description;
 
     profile.availability =
       profile.availability === undefined &&
-      infoConfig.availability !== null &&
-      infoConfig.availability !== undefined
-        ? infoConfig.availability
+      (infoConfig["availability"] || undefined) !== null &&
+      (infoConfig["availability"] || undefined) !== undefined
+        ? infoConfig["availability"] || undefined
         : profile.availability;
 
     profile.location =
       profile.location === undefined &&
-      infoConfig.location !== "" &&
-      infoConfig.location !== null &&
-      infoConfig.location !== undefined
-        ? infoConfig.location
+      (infoConfig["location"] || undefined) !== "" &&
+      (infoConfig["location"] || undefined) !== null &&
+      (infoConfig["location"] || undefined) !== undefined
+        ? infoConfig["location"] || undefined
         : profile.location;
 
     profile.imgUrl =
       profile.imgUrl === undefined &&
-      infoConfig.avatar_url !== "" &&
-      infoConfig.avatar_url !== null &&
-      infoConfig.avatar_url !== undefined
-        ? infoConfig.avatar_url
+      (infoConfig["avatar_url"] || undefined) !== "" &&
+      (infoConfig["avatar_url"] || undefined) !== null &&
+      (infoConfig["avatar_url"] || undefined) !== undefined
+        ? infoConfig["avatar_url"] || undefined
         : profile.imgUrl;
 
     profile.githubUsername =
       profile.githubUsername === undefined &&
-      infoConfig.githubUsername !== "" &&
-      infoConfig.githubUsername !== null &&
-      infoConfig.githubUsername !== undefined
-        ? infoConfig.githubUsername
+      (infoConfig["githubUsername"] || undefined) !== "" &&
+      (infoConfig["githubUsername"] || undefined) !== null &&
+      (infoConfig["githubUsername"] || undefined) !== undefined
+        ? infoConfig["githubUsername"] || undefined
         : profile.githubUsername;
 
     profile.email =
       profile.email === undefined &&
-      infoConfig.email !== "" &&
-      infoConfig.email !== null &&
-      infoConfig.email !== undefined
-        ? infoConfig.email
+      (infoConfig["email"] || undefined) !== "" &&
+      (infoConfig["email"] || undefined) !== null &&
+      (infoConfig["email"] || undefined) !== undefined
+        ? infoConfig["email"] || undefined
         : profile.email;
   }
 
