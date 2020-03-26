@@ -34,7 +34,7 @@ const styles = (theme: ThemeVariables) => ({
     boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
     borderRadius: "25px"
   },
-  githubTag: {
+  githubUsername: {
     color: "#ddd",
     fontWeight: 500,
     fontSize: "20px"
@@ -122,8 +122,16 @@ export class ProfileComponent implements OnInit {
     );
   }
   ngOnInit(): void {
-    this.configReaderService.getProfile(this.profile);
-    this.profileService.getProfile(this.profile);
+    const getConfigInfo = () =>
+      this.configReaderService.getProfile(this.profile);
+
+    const getServicesInfo = (serviceName: string) =>
+      this.profileService.getProfile(this.profile, serviceName);
+
+    this.configReaderService.priorityProfileConfiguration(
+      getConfigInfo,
+      getServicesInfo
+    );
 
     this.configReaderService.getLinks(this.links);
   }

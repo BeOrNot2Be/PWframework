@@ -2,8 +2,8 @@
   "name": "Tim Avilov",
   "bio": "I am energetic self-taught developer with experience in freelance. I fall in love with designing, implementing, testing and maintaining software. I become proficient in various platforms, languages, and embedded systems. Always hungry for knowledge and I am aiming to advance my skills and grow as a developer by gaining more experience in a company that has a hand in developing the innovation of tomorrow.",
   "location": "Portland, Oregon",
-  "githubTag": "BeOrNot2Be",
-  "avatar_url": "https://avatars1.githubusercontent.com/u/33556915?s=400&u=f2e6ebbda62a22a3c226605af917563d99fb256c&v=4",
+  "githubUsername": "BeOrNot2Be",
+  "avatar_url": "https://lh3.googleusercontent.com/_JQQNID-JGonnBGmHTiOf2dpmT7v0xBg6GZPzFeX-iUQ9wyj9sRkKiI7GqQZhD5TpVBBmavJCZR4HSzdsOPBG2qhjBZVnR8nxvm9iatwi1T1a__TDNy3ldan_1fRRwqWKCTS9hyFN6m1Q4fLrhB-TfI134qlLW_OxkSzbF1cGrAwVSTM_306i4Jrb94zWHm0eXrtxniyTHZyzrJsLcf3-r_HRoTNQeSZ0WfShQfgpwuPMIRkBpZ79Z_7Y4qAmHIW6falliwk1gBQSdx9PEUXU1qHVOBtwe4Qmu0ALcLT21yvswtADR-0B_ezZy7AdeeTwRbsAKmUmR5tmdoPmgVqYupzt9V28ojjbhcUrTR3lzTNRvlAHNLez4UosyFgO-EZ42Mlbws7ST5ilTDD0_5MoXlTA1BRnLdLDAopBAHWQcsugVs4ZXE17qQBlG4o2kuPaQFHiQ8t_rxlVzhLpgWYZU_BoZRaLFODniJ6hQFq5tzrRwA1TtdihGDTnuCOEXd9a01etCJ33PttwoPDIr4LCNue7uMrMVM3aU_tqzaV5KBl8VD1fv8g3Imdt8tKhuDMdxW0zZCcHqdtFRCuyEjanvow4ojAnWde7cpU2CnsqMVNTR-rr1mi2zoL1Ueqrv_EmNFEbdWRLojS5Ra4vxOMybwEg_7YL_yW7L34mBsU0q2-4VpHLzxQhK14pZkMdz_AyDvoykUH7Gzk4Z0qTUZ1GRU3AInh3psATAFjquGT2dbPuPVFLItV2xiJ=s640-no",
   "availability": true,
   "email": "timchick.ua@gmail.com",
   "links": {
@@ -37,5 +37,6 @@
       "mainStack": "JS/React",
       "descriptionLink": "https://github.com/BeOrNot2Be/CopVSMed/blob/master/README.md"
     }
-  ]
+  ],
+  "priority": ["profile", "github"]
 }

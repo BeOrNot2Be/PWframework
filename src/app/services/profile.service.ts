@@ -22,43 +22,94 @@ export class ProfileService {
     githubProfile: GithubProfile
   ): void {
     profile.name =
-      profile.name !== undefined ? profile.name : githubProfile.name;
+      profile.name === undefined &&
+      githubProfile.name !== "" &&
+      githubProfile.name !== null &&
+      githubProfile.name !== undefined
+        ? githubProfile.name
+        : profile.name;
+
     profile.description =
-      profile.description !== undefined
-        ? profile.description
-        : githubProfile.bio;
+      profile.description === undefined &&
+      githubProfile.bio !== "" &&
+      githubProfile.bio !== null &&
+      githubProfile.bio !== undefined
+        ? githubProfile.bio
+        : profile.description;
+
     profile.availability =
-      profile.availability !== undefined
-        ? profile.availability
-        : githubProfile.hireable;
+      profile.availability === undefined &&
+      githubProfile.hireable !== null &&
+      githubProfile.hireable !== undefined
+        ? githubProfile.hireable
+        : profile.availability;
+
     profile.location =
-      profile.location !== undefined
-        ? profile.location
-        : githubProfile.location;
+      profile.location === undefined &&
+      githubProfile.location !== "" &&
+      githubProfile.location !== null &&
+      githubProfile.location !== undefined
+        ? githubProfile.location
+        : profile.location;
+
     profile.imgUrl =
-      profile.imgUrl !== undefined ? profile.imgUrl : githubProfile.avatar_url;
-    profile.githubTag =
-      profile.githubTag !== undefined ? profile.githubTag : githubProfile.login;
+      profile.imgUrl === undefined &&
+      githubProfile.avatar_url !== "" &&
+      githubProfile.avatar_url !== null &&
+      githubProfile.avatar_url !== undefined
+        ? githubProfile.avatar_url
+        : profile.imgUrl;
+
+    profile.githubUsername =
+      profile.githubUsername === undefined &&
+      githubProfile.login !== "" &&
+      githubProfile.login !== null &&
+      githubProfile.login !== undefined
+        ? githubProfile.login
+        : profile.githubUsername;
+
     profile.email =
-      profile.email !== undefined ? profile.email : githubProfile.email;
+      profile.email === undefined &&
+      githubProfile.email !== "" &&
+      githubProfile.email !== null &&
+      githubProfile.email !== undefined
+        ? githubProfile.email
+        : profile.email;
   }
 
-  getProfile(profile: Profile, platform: string = "github"): void {
-    switch (platform) {
+  private getUsername(profile: Profile, serviceUsername: string = ""): string {
+    if (serviceUsername !== "") {
+      return serviceUsername;
+    } else {
+      if (
+        profile.githubUsername === undefined ||
+        profile.githubUsername === null
+      ) {
+        throw new Error("No github username for fetching");
+      } else {
+        return profile.githubUsername;
+      }
+    }
+  }
+
+  getProfile(
+    profile: Profile,
+    service: string = "github",
+    serviceUsername: string = ""
+  ): void {
+    const username = this.getUsername(profile, serviceUsername);
+
+    switch (service) {
       case "github":
-        this.getGitHubProfile("beornot2be").subscribe(githubProfile => {
+        this.getGitHubProfile(username).subscribe(githubProfile => {
           this.updateProfileWithGtihubData(profile, githubProfile);
         });
-        profile.backgroundImgUrl =
-          "https://images.unsplash.com/photo-1562683855-f85c2a6446b6?w=1701&q=80";
         break;
 
       default:
-        this.getGitHubProfile("beornot2be").subscribe(githubProfile => {
+        this.getGitHubProfile(username).subscribe(githubProfile => {
           this.updateProfileWithGtihubData(profile, githubProfile);
         });
-        profile.backgroundImgUrl =
-          "https://images.unsplash.com/photo-1562683855-f85c2a6446b6?w=1701&q=80";
         break;
     }
   }

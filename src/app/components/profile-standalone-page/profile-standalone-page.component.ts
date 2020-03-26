@@ -36,7 +36,7 @@ const styles = (theme: ThemeVariables) => ({
   iconListItem: {
     // textAlign: "center"
   },
-  githubTag: {
+  githubUsername: {
     color: "#ddd",
     fontWeight: 500,
     fontSize: "20px"

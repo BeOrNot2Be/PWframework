@@ -3,7 +3,7 @@ export class Profile {
   description: string;
   backgroundImgUrl: string;
   availability: boolean;
-  githubTag: string;
+  githubUsername: string;
   location: string;
   imgUrl: string;
   email: string;
