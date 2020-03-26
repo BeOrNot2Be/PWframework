@@ -1,0 +1,43 @@
+name: Build
+
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+        
+    - name: Install packages 
+      run: npm ci
+    
+    - name: Test
+      run: npm test
+      
+    - name: Lint
+      run: npm run lint
+    
+    - name: build
+    
+    - name: deploy
+      
+    - name: Comment
+      uses: unsplash/comment-on-pr@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        msg: App deployed. Well done ✔️
+  
+    
