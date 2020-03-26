@@ -30,7 +30,9 @@ jobs:
         run: npm run lint
 
       - name: build
-        run: ng deploy --base-href https://${{ github.event.schedule.user.login }}.github.io/${{ github.event.repository.name }}/
+        run: ng deploy --no-silent --base-href https://${{ github.event.schedule.user.login }}.github.io/${{ github.event.repository.name }}/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Comment
         uses: unsplash/comment-on-pr@master
