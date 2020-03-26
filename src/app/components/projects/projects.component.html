@@ -1,25 +1,23 @@
 <div [className]="classes.projects">
-    <a routerLink="">profile</a>
-
     <ly-grid container>
-        <ly-grid item col='6'>
+        <ly-grid item col='6 12@XSmall@Small'>
             <ly-grid container>
                 <div *ngFor="let project of projects; let even=even">
                     <ly-grid item col='12' *ngIf='even'>
                         <ly-card [className]="classes.projectCard">
                             <ly-card-content>
                                 <ly-grid container>
-                                    <ly-grid item col="6">
+                                    <ly-grid item col="6 12@XSmall@Small">
                                         <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline"
                                             (click)="openTab(project.link)">
                                             {{project.name}}
                                         </h2>
                                     </ly-grid>
-                                    <ly-grid item col="6">
+                                    <ly-grid item col="6 12@XSmall@Small">
                                         <div [className]="classes.languageTitle">
                                             <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                            <span [className]="classes.languageTitleComponent"
-                                                [lyTyp]="'title'">{{project.mainStack}}</span>
+                                            <h2 [className]="classes.languageTitleComponent" [lyTyp]="'title'">
+                                                {{project.mainStack}}</h2>
                                         </div>
                                     </ly-grid>
                                 </ly-grid>
@@ -43,24 +41,24 @@
                 </div>
             </ly-grid>
         </ly-grid>
-        <ly-grid item col='6'>
+        <ly-grid item col='6 12@XSmall@Small'>
             <ly-grid container>
                 <div *ngFor="let project of projects; let odd=odd">
                     <ly-grid item col='12' *ngIf='odd'>
                         <ly-card [className]="classes.projectCard">
                             <ly-card-content>
                                 <ly-grid container>
-                                    <ly-grid item col="6">
+                                    <ly-grid item col="6 12@XSmall@Small">
                                         <h2 lyTyp="headline" gutterBottom [className]="classes.projectCardHeadline"
                                             (click)="openTab(project.link)">
                                             {{project.name}}
                                         </h2>
                                     </ly-grid>
-                                    <ly-grid item col="6">
+                                    <ly-grid item col="6 12@XSmall@Small">
                                         <div [className]="classes.languageTitle">
                                             <ly-icon [className]="classes.languageTitleComponent">code</ly-icon>
-                                            <span [className]="classes.languageTitleComponent"
-                                                [lyTyp]="'title'">{{project.mainStack}}</span>
+                                            <h2 [className]="classes.languageTitleComponent" [lyTyp]="'title'">
+                                                {{project.mainStack}}</h2>
                                         </div>
                                     </ly-grid>
                                 </ly-grid>

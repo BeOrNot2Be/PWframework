@@ -16,7 +16,8 @@ const styles = (theme: ThemeVariables) => ({
     wordBreak: "break-word"
   },
   languageTitle: {
-    textAlign: "center"
+    textAlign: "right",
+    marginBottom: "20px"
   },
   languageTitleComponent: {
     display: "inline",

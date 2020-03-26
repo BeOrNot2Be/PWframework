@@ -1,18 +1,125 @@
-<div [className]="classes.profileElement">
-  <ly-paper [className]="classes.paper">
+<div display="block none@XSmall@Small">
+  <div [className]="classes.profileElementSticky">
+    <div [className]="classes.profileElement">
+      <ly-paper [className]="classes.paper">
+        <ly-grid container [spacing]="16">
+          <ly-grid item col='4 12@XSmall@Small'>
+            <div [className]="classes.avatarContainer">
+              <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
+            </div>
+          </ly-grid>
+          <ly-grid item col='8 12@XSmall@Small'>
+            <ly-grid container>
+              <ly-grid item col='12'>
+                <h3 [lyTyp]="'display1'" gutterBottom>{{profile.name}}</h3>
+              </ly-grid>
+              <ly-grid item col='12'>
+                <ly-grid container>
+                  <ly-grid [className]="classes.iconContainer" item col="2">
+                    <ly-icon>person</ly-icon>
+                  </ly-grid>
+                  <ly-grid item col="10">
+                    <span [className]="classes.titleText" [lyTyp]="'title'">
+                      {{profile.availability ? "Available for hire" : "Currently employed"}}
+                    </span>
+                  </ly-grid>
+                </ly-grid>
+              </ly-grid>
+              <ly-grid item col='12'>
+                <ly-grid container>
+                  <ly-grid [className]="classes.iconContainer" item col="2">
+                    <ly-icon>place</ly-icon>
+                  </ly-grid>
+                  <ly-grid item col="10">
+                    <span [className]="classes.titleText" [lyTyp]="'title'">
+                      {{profile.location}}
+                    </span>
+                  </ly-grid>
+                </ly-grid>
+              </ly-grid>
+              <ly-grid item col='12'>
+                <ly-grid container>
+                  <ly-grid [className]="classes.iconContainer" item col="2">
+                    <ly-icon>mail</ly-icon>
+                  </ly-grid>
+                  <ly-grid item col="10">
+                    <span [className]="classes.titleText" [lyTyp]="'title'">
+                      {{profile.email}}
+                    </span>
+                  </ly-grid>
+                </ly-grid>
+              </ly-grid>
+            </ly-grid>
+          </ly-grid>
+          <ly-grid item col='12'>
+            <span [className]="classes.profileDescription" [lyTyp]="'body1'">
+              {{profile.description}}
+            </span>
+          </ly-grid>
+          <ly-grid container item [spacing]="16">
+            <ly-grid item col>
+              <div [className]="classes.smbuttonContainer">
+                <button ly-button appearance="icon" [className]="classes.smbutton" (click)="openTab(links.lnkedin)">
+                  <ly-icon icon="linkedin"></ly-icon>
+                </button>
+              </div>
+            </ly-grid>
+            <ly-grid item col>
+              <div [className]="classes.smbuttonContainer">
+                <button ly-button appearance="icon" [className]="classes.smbutton" (click)="openTab(links.instagram)">
+                  <ly-icon icon="instagram"></ly-icon>
+                </button>
+              </div>
+            </ly-grid>
+            <ly-grid item col>
+              <div [className]="classes.smbuttonContainer">
+                <button ly-button appearance="icon" [className]="classes.smbutton" (click)="openTab(links.github)">
+                  <ly-icon icon="github"></ly-icon>
+                </button>
+              </div>
+            </ly-grid>
+            <ly-grid item col>
+              <div [className]="classes.smbuttonContainer">
+                <button ly-button appearance="icon" [className]="classes.smbutton" (click)="openTab(links.telegram)">
+                  <ly-icon icon="telegram"></ly-icon>
+                </button>
+              </div>
+            </ly-grid>
+          </ly-grid>
+          <ly-grid item col='12'>
+            <ly-grid container>
+              <ly-grid item col='6'>
+                <div [lyTyp]="'body1'">
+                  <span [className]="classes.githubTag">—@{{profile.githubTag}}</span>
+                </div>
+              </ly-grid>
+            </ly-grid>
+          </ly-grid>
+        </ly-grid>
+      </ly-paper>
+    </div>
+  </div>
+</div>
+<div display="none block@XSmall@Small">
+  <ly-paper [className]="classes.paperMobile">
     <ly-grid container [spacing]="16">
-      <ly-grid item col='6'>
+      <ly-grid item col='4 12@XSmall@Small'>
+        <div [className]="classes.avatarContainer">
+          <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
+        </div>
+      </ly-grid>
+      <ly-grid item col='8 12@XSmall@Small'>
         <ly-grid container>
           <ly-grid item col='12'>
             <h3 [lyTyp]="'display1'" gutterBottom>{{profile.name}}</h3>
           </ly-grid>
           <ly-grid item col='12'>
             <ly-grid container>
-              <ly-grid item col="2">
+              <ly-grid [className]="classes.iconContainer" item col="2">
                 <ly-icon>person</ly-icon>
               </ly-grid>
               <ly-grid item col="10">
-                <span [lyTyp]="'title'">
+                <span [className]="classes.titleText" [lyTyp]="'title'">
                   {{profile.availability ? "Available for hire" : "Currently employed"}}
                 </span>
               </ly-grid>
@@ -20,11 +127,11 @@
           </ly-grid>
           <ly-grid item col='12'>
             <ly-grid container>
-              <ly-grid item col="2">
+              <ly-grid [className]="classes.iconContainer" item col="2">
                 <ly-icon>place</ly-icon>
               </ly-grid>
               <ly-grid item col="10">
-                <span [lyTyp]="'title'">
+                <span [className]="classes.titleText" [lyTyp]="'title'">
                   {{profile.location}}
                 </span>
               </ly-grid>
@@ -32,28 +139,17 @@
           </ly-grid>
           <ly-grid item col='12'>
             <ly-grid container>
-              <ly-grid item col="2">
+              <ly-grid [className]="classes.iconContainer" item col="2">
                 <ly-icon>mail</ly-icon>
               </ly-grid>
               <ly-grid item col="10">
-                <span [lyTyp]="'title'">
-                  email@gmail.com
+                <span [className]="classes.titleText" [lyTyp]="'title'">
+                  {{profile.email}}
                 </span>
               </ly-grid>
             </ly-grid>
-            <!-- <div [className]="classes.iconListItem">
-              <ly-icon [className]="classes.iconListItemComponent">mail</ly-icon>
-              <span [className]="classes.iconListItemComponent" [lyTyp]="'title'">
-                email@gmail.com
-              </span>
-            </div> -->
           </ly-grid>
         </ly-grid>
-      </ly-grid>
-      <ly-grid item col='6'>
-        <div [className]="classes.avatarContainer">
-          <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
-        </div>
       </ly-grid>
       <ly-grid item col='12'>
         <span [className]="classes.profileDescription" [lyTyp]="'body1'">

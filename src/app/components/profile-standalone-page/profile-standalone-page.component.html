@@ -1,19 +1,19 @@
 <div [className]="classes.profileElement">
     <ly-paper [className]="classes.paper">
         <ly-grid container [spacing]="16">
-            <ly-grid item col='4'>
+            <ly-grid item col='4 12@XSmall@Small'>
                 <div [className]="classes.avatarContainer">
                     <img [className]="classes.profileImage" alt={{profile.name}} src={{profile.imgUrl}}>
                 </div>
             </ly-grid>
-            <ly-grid item col='8'>
+            <ly-grid item col='8 12@XSmall@Small'>
                 <ly-grid container>
                     <ly-grid item col='12'>
                         <ly-grid container>
-                            <ly-grid item col="6">
+                            <ly-grid item col="6 12@XSmall@Small">
                                 <h3 [lyTyp]="'display1'" gutterBottom>{{profile.name}}</h3>
                             </ly-grid>
-                            <ly-grid item col="6">
+                            <ly-grid item col="6 12@XSmall@Small">
                                 <div>
                                     <button ly-button appearance="icon" (click)="openTab(links.lnkedin)">
                                         <ly-icon icon="linkedin"></ly-icon>
@@ -33,7 +33,7 @@
                     </ly-grid>
                     <ly-grid item col='12'>
                         <ly-grid container>
-                            <ly-grid item col="2">
+                            <ly-grid item col="2" [className]="classes.iconContainer">
                                 <ly-icon>person</ly-icon>
                             </ly-grid>
                             <ly-grid item col="10">
@@ -45,7 +45,7 @@
                     </ly-grid>
                     <ly-grid item col='12'>
                         <ly-grid container>
-                            <ly-grid item col="2">
+                            <ly-grid item col="2" [className]="classes.iconContainer">
                                 <ly-icon>place</ly-icon>
                             </ly-grid>
                             <ly-grid item col="10">
@@ -57,7 +57,7 @@
                     </ly-grid>
                     <ly-grid item col='12'>
                         <ly-grid container>
-                            <ly-grid item col="2">
+                            <ly-grid item col="2" [className]="classes.iconContainer">
                                 <ly-icon>mail</ly-icon>
                             </ly-grid>
                             <ly-grid item col="10">

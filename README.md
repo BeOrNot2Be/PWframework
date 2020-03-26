@@ -9,3 +9,5 @@ Build with Typescript/Angular it is small personal website to show contacts and 
 ## From Developer
 
 Made with ❤️ by [BeOrNot2Be][link:beornot2be]. I always happy to receive your feedback! Please feel free to give new ideas and help me to implement mine.
+
+[link:beornot2be]: https://github.com/BeOrNot2Be

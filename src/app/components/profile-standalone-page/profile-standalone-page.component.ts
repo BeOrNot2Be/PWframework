@@ -86,6 +86,9 @@ const styles = (theme: ThemeVariables) => ({
   },
   projectsButtonContainer: {
     textAlign: "right"
+  },
+  iconContainer: {
+    textAlign: "right"
   }
 });
 

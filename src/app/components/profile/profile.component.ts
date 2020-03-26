@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { GithubProfile, Profile, ProfileLink } from "../../models/Profile";
 import { ProfileService } from "../../services/profile.service";
 import { LyIconService } from "@alyle/ui/icon";
-import { shadowBuilder, LyTheme2, ThemeVariables } from "@alyle/ui";
+import { shadowBuilder, LyTheme2, ThemeVariables, lyl } from "@alyle/ui";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ConfigReaderService } from "src/app/services/config-reader.service";
 
@@ -19,14 +19,20 @@ const styles = (theme: ThemeVariables) => ({
   paper: {
     display: "block",
     position: "relative",
-    margin: "1em",
+    margin: "auto 16px",
     padding: "1em",
     background: theme.background.default,
     boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
     borderRadius: "25px"
   },
-  iconListItem: {
-    // textAlign: "center"
+  paperMobile: {
+    display: "block",
+    position: "relative",
+    padding: "1em",
+    margin: "2em",
+    background: theme.background.default,
+    boxShadow: "9px 9px 9px #cbcaca, -9px -9px 9px #ffffff",
+    borderRadius: "25px"
   },
   githubTag: {
     color: "#ddd",
@@ -41,9 +47,13 @@ const styles = (theme: ThemeVariables) => ({
     width: "100%",
     height: "auto"
   },
-  profileElement: {
+  profileElementSticky: {
     position: "sticky",
-    top: "20vh"
+    top: "0px"
+  },
+  profileElement: {
+    height: "100vh",
+    display: "flex"
   },
   profileDescription: {
     margin: "1rem 0"
@@ -59,6 +69,12 @@ const styles = (theme: ThemeVariables) => ({
   },
   smbuttonContainer: {
     display: "flex"
+  },
+  iconContainer: {
+    textAlign: "right"
+  },
+  titleText: {
+    wordBreak: "break-word"
   }
 });
 
